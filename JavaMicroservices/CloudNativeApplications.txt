@@ -1,0 +1,36 @@
+What are Cloud native applications ?
+
+    -> Cloud-Native applications are software applications designed specifically to leverage cloud computing principles and take full adavntage of cloud-native technologies and services.
+    -> These applications are built and optimized to run in cloud environments, utilizing the scalability, elasticity and flexibility offered by the cloud.
+
+    -> Cloud Native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private and hybrid clouds.
+    -> Containers, service meshes, microservices, immutable infrastructure and declarative APIs exemplify this approach.
+    -> These techniques enable loosely coupled systems that are resilient, manageable and observable.
+    -> Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil.
+
+Important characteristics of cloud native applications:
+
+    -> Microservices:
+            Often built using a microservice architecture, where the application is broken down into a smaller, loosely coupled services that can be developed, deployed and scaled independently.
+
+    -> Containers:
+            Typically, packaged and deployed using containers, such as Docker containers.
+            Containers provide a lightweight and consistent environment for running applications, making them highly portable across different cloud platforms and infrastructure.
+
+    -> Scalability and Elasticity:
+            Designed to scale horizontally, allowing them to handle increased loads by adding more instances of services.
+            They can also automatically scale up or down based on demand, thanks to cloud-native orchestration platforms like kubernetes.
+
+    -> DevOps Practices:
+            Embrance Devops principles, promoting collaboration between development and operations teams.
+            They often incorporate continuous integration, continuous delivery and automated deployment pipelines to streamline the software development and deployment processes.
+
+    -> Resilience and Fault Tolerance:
+            Designed to be resilient in the face of failures. They utilize techniques such as distributed architecture, load balancing and automated failure recovery to  ensure high availability and fault tolerance. 
+
+
+    -> Cloud-Native Services:
+            Take advantage of cloud-native services provided by the cloud platform, such as managed databases, messaging queues, caching systems and identify services.
+            This allows developers to focus more on application logic and less on managing infrastructure components.
+
+  
