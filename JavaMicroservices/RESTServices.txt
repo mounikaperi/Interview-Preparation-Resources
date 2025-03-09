@@ -78,6 +78,111 @@ Different Annotations and classes that supports building REST services:
 
 Summary of the steps followed to build microservices:
 
+      -> Build Empty Spring Boot Applications:
+            First we created empty spring boot applications with required starter dependencies related to web, actuator, JPA, devtools, validations, H2 DB, Lombok, spring doc open API etc.
+
+      -> Build DB related logic, entities and DTOs
+            We created required DB tables schema, established connection details with H2 DB, created JPA related entities, repositories.
+            Post that using DTO pattern guidelines, we built DTO classes and mapper logic inside all the microservices.
+
+      -> Build Business Logic:
+            Inside all the microservices, we created REST APIs supporting CRUD operations with the help of various annotations like @PostMapping, @GetMapping, @PutMapping, @DeleteMapping etc
+
+      -> Build Global Exception handling logic:
+            We built global exception hanling logic using annotations like @ControllerAdvice and @ExceptionHandler.
+            Also created custom business exceptions like CustomerAlreadyExitsException.
+
+      -> Perform data validations on the input:
+            Perform validations on the input data using annotations present inside jakarta.validation package. 
+            These annotations are like @NotEmpty, @Size, @Email, @Pattern, @Validated, @Valid etc
+
+      -> Perform auditing using Spring Data JPA:
+            With the help of annotations like @CreatedDate, @CreatedBy, @LastModifiedDate, @LastModifiedBy, @EntityListeners and @EnableJpaAuditing we implemented logic to populate audit columns in DB.
+
+      -> Documenting REST APIs
+            With the help of OpenAPI specifications, Swagger, Spring Doc library, we documented our REST APIs. 
+            In the same process, we used annotations like @Schema, @Tag, @Operation, @ApiResponse etc
 
 
-    -> 
+
+How to Right Size and identify service boundaries of microservices?
+
+      -> One of the most challenging aspects of building a successful microservices system is the identification of proper microservice boundaries and defining the size of each microservice.
+      -> Below are the most common followed approaches in the industry:
+
+      -> Domain driven Sizing:
+            - Since many of our modifications or enhancements driven by the business needs, we can size/define boundaries of our microservices that are closely aligned with domain-driven design and business 
+              capabilities. But this process takes lot of time and need good domain knowledge.
+
+      -> Event Storming Sizing:
+            - Conducting an interactive fun session among various stakeholders to identify the list of important events in the system like 'Completed Payment', 'Search for Product' etc.
+            - Based on the events we can identify 'Commands', 'Reactions' and can try to group them to a domain-driven services.
+            
+Monolithic To Microservices:
+
+      - The app has become so overwhelming complicated that no single person understands it.
+      - Your fear making changes - each change has unintended and costly side effects.
+      - New features/fixes become tricky, time-consuming and expensive to implement.
+      - Each release as small as possible and requires a full deployment of the entire application.
+      - One unstable component can crash the entire system.
+      - New technologies and frameworks aren't an option.
+      - It's difficult to maintain small isolated teams and implement agile delivery methodologies.
+
+      Ecommerce:
+
+            So the Ecommerce company decided and adopted the below cloud design by leveraging Microservices architecture to make their life easy and less risk with the continuous changes
+
+      Client App (Website with Angular/React) --------------------> API Gateway --------------------> Identity Microservice ---------> RDBMS ---------------------->
+                                                                                --------------------> Catalog Microservice ----------> RDBMS ---------------------->
+                                                                                --------------------> Order Microservice ------------> MongoDB -------------------->   Event Bus
+                                                                                --------------------> Invoices Microservice ---------> MongoDB -------------------->
+                                                                                --------------------> Sales Microservice ------------> Redis ---------------------->
+                                                                                --------------------> Marketing Microservice --------> Redis ---------------------->
+
+
+Strangler Fig Pattern:
+
+      -> The Strangler Fig Pattern is a software migration pattern used to gradually replace or refactor a legacy system with new system, piece by piece, without disrupting the existing functionality.
+      -> This pattern gets its name from the way a strangler fig plant grows around an exiting tree, slowly replacing it until the original tree is no longer needed.
+
+      When to use the Strangler Fig Pattern:
+
+      -> When you need to modernize a large or complex legacy system.
+      -> When you want to avoid the risk associated with a complete system rewrite or big bang migration.
+      -> When the legacy system needs to remain operational during the transition to the new system.
+
+      -> The Strangler Fig Pattern facilitates the migration of a monolithic application to a modern microservices architecture by leveraging a Domain-Driven Design (DDD) approach.
+
+      -> The legacy monolith is carefully analyzed, broken down into distinct domains, and services are gradually rewritten using newer technologies. 
+      -> The incremental transformation ensures that each service is refactored independently, allowing for a smooth transition from monolith to a fully microservice based architecture while maintainig system
+            functionality throughout the process.
+      -> Next, a Strangler facade is introduced to manage traffic routing between the legacy monolithic application and the new microservices.
+      -> This routing can also be handled via an API Gateway, if prefered. During this phase, both the monolith and microservice coexist.
+
+      -> As the microservices are fully developed and stabilized, the corresponding functionality in the monolith is gradually phased out as "strangled" adn eventually removed.
+      -> This process involves four steps: Identification, tranformation, co-existence and elimination.
+
+
+Deployment, Portability and Scalability of Microservices:
+
+      - Deployment: How do we deploy all tiny 100s of microservices with less effort and cost?
+      - Portability: How do we move our 100s of microservices across environments with less effort, configurations and cost?
+      - Scalability: How do we scale our applications based on the demand on the fly with minimum effort and cost?
+
+      To overcome the above challenges, we should containerize our microservices? Why?
+
+      - Containers offer a self-contained and isolated environment for applications, including all necessary dependencies.
+      - By containerizing an application, it becomes portable and can run sseamlessly in any cloud environment.
+      - Containers enable unified management of applications regardless of the language or framework used.
+      - Docker is an open source platform that provides the ability to package and run an application in a loosely isolated environment called a container.
+
+
+
+      Virtual Machines:
+
+            Main differences between virtual machines and containers. 
+            Containers don't need the Guest OS nor the hypervisor to assign resources instead, they use the container engine.
+
+            VM1, VM2, VM3 ------------------------------------> Hypervisor ------------------------------------------------> Server (Physical hardware)
+            Container1, Container2, Container3 ---------------> Container Engine(Docker) --------------> Host OS ----------> Server (Physical hardware)
+      
