@@ -20,3 +20,5 @@ Why Spring Boot For Microservices?
 -> Inbuilt support of production ready features such as metrics, healthchecks and externalized configuration. 
 -> We can quickly bootstrap a microservice project and start coding with range of starter dependencies that provide preconfigured settings for various components such as databases, queues etc.
 -> Well-suited for cloud-native development. It integrates smoothly with cloud platforms like Kubernetes provides support for containerization and enables seamless deployment to popular cloud providers.
+
+-> In the traditional approach, applications are typically packaged as WARs and rely on the presence of a server in the execution environment for running. However, in the microservices paradigm, applications are packaged as self-contained JARs, also called as FAT jars or uber JARs since they contain the application itself, the dependencies and the embedded server.
