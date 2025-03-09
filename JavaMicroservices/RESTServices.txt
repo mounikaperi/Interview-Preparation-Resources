@@ -1,0 +1,83 @@
+Implementing REST services:
+
+-> REST (Representational State Transfer) services are one of the most often encountered ways to implement communication between two web apps. 
+-> REST offers access to functionality the server exposes through endpoints a client can call.
+-> Typically REST services are built to expose the business functionality and support CRUD operations on the storage system. 
+-> Attached are the standards that we need to follow while building REST services.
+
+Business logic supporting CRUD operations
+
+-> Create: HttpMethod.POST
+-> Read: HttpMethod.GET
+-> Update: HttpMethod.PUT/PATCH
+-> Delete: HttpMethod.DELETE
+
+Proper input validation and exception Handling:
+
+-> Make sure all the REST services perform input validations, handle the runtime and business exceptions properly.
+-> In all kind of scenarios, REST services should send a meaningful response to the clients.
+
+Document REST services:
+
+-> With the help of standards like Open API specification, Swagger make sure to document your REST APIs.
+-> This helps your client, third party developers to understand your services clearly.
+
+DTO (Data Transfer Object) Pattern:
+
+-> The Data Transfer Object (DTO) Pattern is a design pattern that allows you to transfer data between different parts of your application.
+-> DTOs are simple objects that contain only data, and they do not contain any business logic.
+-> This makes them ideal for transferring data between different layers of your application such as the presentation layer and the data access layer.
+
+      Client Applications -> DTO Class -> Mapper -> DB Entities
+
+-> Here are some of the benefits of using the DTO pattern:
+-> Reduces Network traffic: 
+      DTOs can be used to batch up multiple pieces of data into single object, which can reduce the number of network requests that need to be made. 
+      This can improve performance and reduce the load on your servers.
+-> Encapsulates serialization:
+      DTOs can be used to encapsulate the serialization logic for transferring data over the wire.
+      This makes it easier to change the serialization format in the future, without having to make changes to the rest of your application.
+-> Decouple layers:
+      DTOs can be used to decouple the presentation layer from the data access layer.
+      This makes it easier to change the presentation layer without having to change the data layer.
+
+
+
+Different Annotations and classes that supports building REST services:
+
+  -> @RestController:
+
+            - can be used to put on top of a call. This will expose your methods as REST APIs.
+            - Developers can also use @Controller + @ResponseBody for same behavior.
+
+  -> @ResponseBody:
+
+            - can be used on top of a method to build a REST API when we are using @Controller on top of Java class.
+
+  -> @ResponseEntity:
+
+            - allow developers to send response body, status and headers on the HTTP response.
+
+  -> @ControllerAdvice:
+
+            - is used to mark the class as a REST controller advice.
+            - along with @ExceptionHandler, this can be used to handle exceptions globally inside an app.
+            - We have another annotation @RestControllerAdvice which is same as @ControllerAdvice + @ResponseBody
+
+
+  -> RequestEntity:
+
+            - Allow developers to receive the request body, header in a HTTP request.
+
+  -> @RequestHeader and @RequestBody:
+
+            - is used to receive the request body and header individually.
+
+
+
+
+Summary of the steps followed to build microservices:
+
+
+
+    -> 
