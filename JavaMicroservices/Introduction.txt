@@ -1,0 +1,68 @@
+The Monolith:
+
+
+-> Back a decade, all the applications used to be deployed as a single unit where all functionality deployed together inside a single server. 
+-> We call this architecture approach as Monolithic.
+
+Pros:
+
+-> Simpler development and deployment for smaller teams and applications.
+-> Fewer cost cutting concerns.
+-> Better performance due to no network latency.
+
+
+Cons:
+
+-> Difficult to adopt new technologies.
+-> Limited agility.
+-> Single codebase and difficult to maintain.
+-> Not Fault tolerant.
+-> Tiny update and feature development always needs a full deployment.
+
+-> We have various forms of Monolithic with the names like Single Process Monolith, Modular Monolith, Distributed Monolith.
+-> In a monolithic approach, developers work with a single codebase, which is then packaged as a unified unit, such as an EAR/WAR file, and deployed onto a single web/application server.
+-> Additionally, the entire application is supported by a single database.
+
+THE SOA Architecture:
+
+-> SOA emerged as an approach to combat the challenges of large, monolithic applications. 
+-> It is an architectural style that focuses on organizing software systems as a collection of loosely coupled, interoperable services.
+-> It provides a way to design and develop large-scale applications by decomposing them into smaller, modular services that can be independently developed, deployed and managed.
+
+Pros:
+
+-> Reusability of services.
+-> Better maintainability.
+-> Higher reliability.
+-> Parallel development.
+
+Cons:
+
+-> Complex management due to communication protocols
+-> High investment costs due to vendor in middleware.
+-> Extra overload.
+
+
+-> SOA observed numerous instances where teams aimed to create smaller services, yet they remained tightly coupled to a shared database and required deploying everything as a cohesive unit.
+-> While they followed a service-oriented approach, it cannot be classified as microservices.
+
+
+THE MICROSERVICES:
+
+-> Microservices are independently releasable services that are modeled around a business domain.
+-> A service encapsulates functionality and makes it accessible to other services via networks - you construct a more complex system from these building blocks.
+-> One microservice might represent Accounts, another Cards, and yet another Loans, but they might constitute an entire bank system.
+
+Pros:
+
+-> Easy to develop, test and deploy.
+-> Increased agility
+-> Ability to scale horizontally.
+-> Parallel development.
+-> Modeled around a business domain.
+
+Cons:
+
+-> Complexity
+-> Infrastructure overhead
+-> Security concerns.
