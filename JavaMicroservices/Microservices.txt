@@ -1,0 +1,22 @@
+MICROSERVICES:
+
+-> Microservices is an approach of developing single application as a suite of small services, each running on its own process and communicating with lightweight mechanisma, built around business capabilities and independently deployable by fully automated deployment machinery.
+
+HOW TO BUILD MICROSERVICES:
+
+-> When considering a web application, the traditional approach involves packaging it as a WAR or EAR file. 
+-> These archive formats are commonly used to bundle JAVA applications, which are then deployed to web servers like Tomcat or application servers like WildFly.
+-> This is extremely challenging and practically impossible task.
+
+Why Spring Boot For Microservices?
+
+-> Spring Boot is a framework that simplifies the development and deployment of Java applications, including Microservices. 
+-> With Spring Boot, you can build self-contained, executable JAR files instead of the traditional WAR or EAR files.
+-> These JAR files contain all dependencies and configurations required to run the microservice. 
+-> This approach eliminates the need for external web servers or application servers.
+
+-> Provides a range of built in features and integrations such as auto-configuration, dependency injections, support for various cloud platforms.
+-> Provides an embedded Tomcat, Jetty or Undertow server which can run the microservice directly without the need for a separate server installation.
+-> Inbuilt support of production ready features such as metrics, healthchecks and externalized configuration. 
+-> We can quickly bootstrap a microservice project and start coding with range of starter dependencies that provide preconfigured settings for various components such as databases, queues etc.
+-> Well-suited for cloud-native development. It integrates smoothly with cloud platforms like Kubernetes provides support for containerization and enables seamless deployment to popular cloud providers.
